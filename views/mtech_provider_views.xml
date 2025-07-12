@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_mtech_sms_provider" model="ir.actions.act_window">
+        <field name="name">MTech SMS Providers</field>
+        <field name="res_model">mtech.sms.provider</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_mtech_sms_root" name="MTech SMS" sequence="10"/>
+    <menuitem id="menu_mtech_sms_config" name="Configuration" parent="menu_mtech_sms_root" action="action_mtech_sms_provider"/>
+    
+    <record id="view_mtech_sms_provider_form" model="ir.ui.view">
+        <field name="name">mtech.sms.provider.form</field>
+        <field name="model">mtech.sms.provider</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="test_sms_sending" string="Send Test SMS" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="mtech_username"/>
+                        <field name="mtech_password" password="True"/>
+                        <field name="mtech_url"/>
+                        <field name="mtech_sender_id"/>
+                        <field name="dlr_url" help="URL where MTech will post delivery reports"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mtech_sms_provider_list" model="ir.ui.view">
+        <field name="name">mtech.sms.provider.list</field>
+        <field name="model">mtech.sms.provider</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active"/>
+                <field name="mtech_sender_id"/>
+            </list>
+        </field>
+    </record>
+</odoo>

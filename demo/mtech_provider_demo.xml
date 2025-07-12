@@ -1,0 +1,9 @@
+<odoo>
+    <record id="demo_mtech_provider" model="mtech.sms.provider">
+        <field name="name">MTech Demo</field>
+        <field name="mtech_username">demo_api_user</field>
+        <field name="mtech_password">demo_api_pass</field>
+        <field name="mtech_sender_id">DEMO</field>
+        <field name="active">False</field>
+    </record>
+</odoo>
